@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Project CSS Aesthetic</title>
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            padding: 20px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-family: 'Quicksand', sans-serif;
+
+            background: linear-gradient(
+                135deg,
+                #ffd1dc,
+                #ffc6ff,
+                #b5ead7
+            );
+        }
+
+        .container {
+            width: 100%;
+            max-width: 850px;
+
+            padding: 35px;
+
+            background: rgba(255, 255, 255, 0.95);
+
+            border-radius: 30px;
+
+            border: 3px solid white;
+
+            box-shadow: 0 20px 40px rgba(255, 117, 140, 0.25);
+        }
+
+        /* HALAMAN */
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* NAVIGASI */
+
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+
+            margin-bottom: 30px;
+
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            border: none;
+            border-radius: 50px;
+
+            padding: 12px 22px;
+
+            font-family: 'Quicksand', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .btn-js {
+            background: #a0c4ff;
+            color: #03045e;
+        }
+
+        .btn-js:hover {
+            background: #709dff;
+            transform: translateY(-2px);
+        }
+
+        .btn-switch {
+            background: linear-gradient(
+                135deg,
+                #ff758c,
+                #ff477e
+            );
+
+            color: white;
+        }
+
+        .btn-switch:hover {
+            transform: translateY(-2px);
+        }
+
+        /* JUDUL */
+
+        .title-main {
+            text-align: center;
+
+            color: #590d22;
+
+            font-family: 'Poppins', sans-serif;
+
+            font-size: 34px;
+
+            margin-bottom: 25px;
+        }
+
+        /* CARD */
+
+        .card-section {
+            background: #fff0f3;
+
+            border: 2px dashed #ffb3c6;
+
+            border-radius: 20px;
+
+            padding: 25px;
+
+            margin-bottom: 20px;
+        }
+
+        .section-heading {
+            color: #590d22;
+
+            font-size: 20px;
+
+            margin-bottom: 15px;
+        }
+
+        .group-list,
+        .tech-list {
+            list-style: none;
+        }
+
+        .group-list li,
+        .tech-list li {
+            color: #800f2f;
+
+            font-size: 16px;
+
+            font-weight: 600;
+
+            padding: 8px 0;
+        }
+
+        .info-text {
+            color: #800f2f;
+
+            font-size: 16px;
+
+            line-height: 1.6;
+
+            margin-bottom: 8px;
+        }
+
+        /* FOTO */
+
+        .profile-img-box {
+            text-align: center;
+
+            margin-top: 25px;
+        }
+
+        .profile-img-box img {
+            width: 100%;
+            max-width: 500px;
+            height: 220px;
+
+            object-fit: cover;
+
+            border-radius: 20px;
+
+            border: 4px solid white;
+
+            box-shadow: 0 8px 20px rgba(255, 117, 140, 0.3);
+        }
+
+        /* RESEP */
+
+        .recipe-header {
+            text-align: center;
+
+            margin-bottom: 25px;
+        }
+
+        .recipe-header img {
+            width: 100%;
+            height: 240px;
+
+            object-fit: cover;
+
+            border-radius: 20px;
+
+            border: 3px solid white;
+
+            margin-bottom: 15px;
+        }
+
+        .recipe-header h1 {
+            color: #590d22;
+
+            font-family: 'Poppins', sans-serif;
+
+            font-size: 30px;
+        }
+
+        .recipe-card {
+            background: #fff0f3;
+
+            border: 2px solid #ffb3c6;
+
+            border-radius: 20px;
+
+            padding: 22px;
+
+            margin-bottom: 20px;
+        }
+
+        .recipe-card h3 {
+            color: #590d22;
+
+            font-family: 'Poppins', sans-serif;
+
+            font-size: 19px;
+
+            margin-bottom: 15px;
+
+            border-bottom: 2px solid #ffccd5;
+
+            padding-bottom: 8px;
+        }
+
+        .recipe-card ul,
+        .recipe-card ol {
+            padding-left: 22px;
+        }
+
+        .recipe-card li {
+            color: #800f2f;
+
+            font-size: 15px;
+
+            line-height: 1.6;
+
+            margin-bottom: 8px;
+        }
+
+        /* HP */
+
+        @media (max-width: 600px) {
+
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            .title-main {
+                font-size: 27px;
+            }
+
+            .recipe-header h1 {
+                font-size: 25px;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- ==================== HALAMAN INDEX ==================== -->
+
+    <div id="page-index" class="page active">
+
+        <div class="nav-buttons">
+
+            <button
+                class="btn btn-js"
+                onclick="pesanJS()">
+
+                <i class="fa-solid fa-code"></i>
+                Internal JS
+
+            </button>
+
+            <button
+                class="btn btn-switch"
+                onclick="switchPage('resep')">
+
+                Resep Mie Goreng
+                ➜
+
+            </button>
+
+        </div>
+
+
+        <h1 class="title-main">
+            🌸 Latihan CSS Aesthetic 🌸
+        </h1>
+
+
+        <div class="card-section">
+
+            <h2 class="section-heading">
+                👩‍🎓 Anggota Kelompok
+            </h2>
+
+            <ul class="group-list">
+
+                <li>
+                    ❤️ 1. Putri Safa (30)
+                </li>
+
+                <li>
+                    ❤️ 2. Reva Yuliana (32)
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="card-section">
+
+            <p class="info-text">
+                ✨ Ini adalah index dari project latihan CSS dengan nuansa pink yang menarik.
+            </p>
+
+            <p class="info-text">
+                💡 3 teknik penyisipan CSS yang digunakan:
+            </p>
+
+            <ul class="tech-list">
+
+                <li>
+                    ✨ 1. Inline CSS
+                </li>
+
+                <li>
+                    ✨ 2. Internal CSS
+                </li>
+
+                <li>
+                    ✨ 3. External CSS
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="profile-img-box">
+
+            <!-- FOTO BARU -->
+            <img
+                src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c"
+                alt="Makanan Sehat">
+
+        </div>
+
+    </div>
+
+
+    <!-- ==================== HALAMAN RESEP ==================== -->
+
+    <div id="page-resep" class="page">
+
+        <div class="nav-buttons">
+
+            <button
+                class="btn btn-js"
+                onclick="pesanJS()">
+
+                <i class="fa-solid fa-code"></i>
+                Internal JS
+
+            </button>
+
+            <button
+                class="btn btn-switch"
+                onclick="switchPage('index')">
+
+                ← Kembali ke Index
+
+            </button>
+
+        </div>
+
+
+        <div class="recipe-header">
+
+            <!-- FOTO MIE -->
+            <img
+                src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624"
+                alt="Mie Goreng">
+
+            <h1>
+                🍜 Resep Mie Goreng Spesial 🍜
+            </h1>
+
+        </div>
+
+
+        <!-- BAHAN -->
+
+        <div class="recipe-card">
+
+            <h3>
+                🍜 Bahan Utama
+            </h3>
+
+            <ul>
+
+                <li>1 bungkus mie telur</li>
+
+                <li>1 butir telur ayam</li>
+
+                <li>2 siung bawang putih</li>
+
+                <li>2 siung bawang merah</li>
+
+                <li>2 buah cabai merah</li>
+
+                <li>1 batang daun bawang</li>
+
+                <li>1 sendok makan kecap manis</li>
+
+                <li>1 sendok makan saus tiram</li>
+
+                <li>Garam secukupnya</li>
+
+                <li>Minyak goreng secukupnya</li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- PELENGKAP -->
+
+        <div class="recipe-card">
+
+            <h3>
+                🥬 Bahan Pelengkap
+            </h3>
+
+            <ul>
+
+                <li>Sawi hijau</li>
+
+                <li>Kol</li>
+
+                <li>Bakso atau sosis</li>
+
+                <li>Bawang goreng</li>
+
+                <li>Kerupuk</li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- CARA MEMBUAT -->
+
+        <div class="recipe-card">
+
+            <h3>
+                👩‍🍳 Cara Membuat
+            </h3>
+
+            <ol>
+
+                <li>
+                    Rebus mie hingga matang lalu tiriskan.
+                </li>
+
+                <li>
+                    Panaskan minyak di dalam wajan.
+                </li>
+
+                <li>
+                    Tumis bawang merah, bawang putih, dan cabai hingga harum.
+                </li>
+
+                <li>
+                    Masukkan telur lalu orak-arik hingga matang.
+                </li>
+
+                <li>
+                    Masukkan sawi, kol, dan bakso atau sosis.
+                </li>
+
+                <li>
+                    Masukkan mie yang sudah direbus.
+                </li>
+
+                <li>
+                    Tambahkan kecap manis, saus tiram, dan garam.
+                </li>
+
+                <li>
+                    Aduk sampai semua bumbu tercampur rata.
+                </li>
+
+                <li>
+                    Setelah matang, angkat dan sajikan dengan bawang goreng dan kerupuk.
+                </li>
+
+            </ol>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ==================== JAVASCRIPT ==================== -->
+
+<script>
+
+    function pesanJS() {
+
+        alert("✨ Internal JavaScript aktif! ✨");
+
+    }
+
+
+    function switchPage(pageId) {
+
+        document
+            .getElementById("page-index")
+            .classList.remove("active");
+
+        document
+            .getElementById("page-resep")
+            .classList.remove("active");
+
+
+        document
+            .getElementById("page-" + pageId)
+            .classList.add("active");
+
+        window.scrollTo(0, 0);
+
+    }
+
+</script>
+
+</body>
+</html>
